@@ -20,6 +20,10 @@ jobs:
         with: 
           java-version: '8.0.382+5'
           distribution: 'temurin'
+      - name: execute unit tests
+        run: ./gradlew test
+      - name: execute integration tests
+        run: ./gradlew integTest
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
